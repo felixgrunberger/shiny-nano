@@ -1,0 +1,53 @@
+---
+title: "Rmd Bug"
+output: html_document
+runtime: shiny
+---
+
+#### Pipeline   
+
+Before starting you need following input files:  
+<br>
+`genome_fasta={path_to_genome_fasta}`  
+`input_folder={path_to_raw_fast5_folder}`  
+`output_folder={path_where_data_are_stored}`  
+<br>
+<br>
+
+
+Output reads in *fast5* format can be ```basecalled``` using ONT´s in-house basecaller albacore using something like:
+
+```
+## BASECALLING USING ALBACORE
+read_fast5_basecaller.py --flowcell FLO-MIN107 --kit SQK-LSK108 --output_format fastq --input {input_folder} --save_path {output_path} -t 4
+```
+Basecalled reads are stored as *fastq* files. In addition, a *sequencing_summary* will be automatically created, that serves as input for the shinyNano quality control of the reads.  
+Multiple *fastq* files can be combined with:  
+```
+## COMBINE MULTIPLE FASTQ TO ONE SINGLE FILE
+cat {output_path}/workspace/pass/*.fastq > {output_path}/workspace/pass/combined.fastq 
+```
+
+We use ```graphmap``` to map reads to the genome to get information about sequencing depth on a genome-wide scale.  
+```
+## MAPPING TO GENOME USING GRAPHMAP OF NANOPORE DNA DATA
+graphmap align \
+--ref {genome_fasta} \
+--circular \
+--reads {output_path}/workspace/pass/combined.fastq  \
+--out {output_path}/workspace/pass/combined.sam \
+--in-fmt fastq
+```
+
+To minimize file size we convert received *sam* file first to *bam*, then to *sorted.bam* and use ```bedtools genomecov``` with ```-d``` option to receive sequencing depth on a single-nucleotide level.  
+```
+## SAM TO SORTED BAM
+samtools view -u {output_path}/workspace/pass/combined.sam | samtools sort -@ 4 -o {output_path}/workspace/pass/combined.sorted.bam
+
+## SORTED BAM TO SEQUENCING DEPTH
+bedtools genomecov -ibam {output_path}/workspace/pass/combined.sorted.bam -d > {output_path}/workspace/pass/combined.coverage.bed
+```
+*.bed* file can be uploaded to shinyNano plot whole-genome coverage.  
+
+
+
