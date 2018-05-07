@@ -1,0 +1,134 @@
+a:hover {
+	text-decoration:underline;
+	color: #252C34;
+}
+
+
+a {
+	color:#252C34;
+	font-weight: bold;
+}
+
+/* customize background color of body */
+.content-wrapper {
+  background-color: #F2F2F2;
+}
+
+/* customize background color of sidebar 
+#sidebarCollapsed {
+  background: linear-gradient(#252C34FF, #2C728EFF);
+}
+*/
+
+
+/* change color of sidebar text */
+.left-side .main-sidebar {
+  padding-top: 65px; font-family: Avenir; font-size: 130%; max-height: 1000px; font-weight: bold;}
+
+
+
+/* customize heigth of main header */
+.main-header .logo {
+  font-family: "Avenir";
+  font-weight: bold;
+  font-size: 30px;
+  height: 50px; 
+  padding-left: 0px;
+  padding-bottom:100;
+}
+
+
+.main-sidebar{
+  padding-top: 50px;
+}
+.main{
+  padding-top:50px;
+}
+
+/* customize dashboard  box appearence */
+.box.box-solid.box-primary>.box-header {
+  color:#252C34;
+  background:#FFF;
+}
+
+.box.box-solid.box-primary{
+  border-width:thin;
+  border-top-width:thick;
+border-bottom-color: white;
+border-left-color:white;
+border-right-color: white;
+border-top-color:#252C34;
+}
+
+
+
+
+/* change appreance of minimize sign*/
+
+.box-tools.pull-right {
+  background:#252C34;
+}
+
+
+/* progress BOXES*/
+/*#shiny-notification-panel{
+  background-color: #22A884;
+  color:#FFFFFF;
+}
+*/
+
+
+/* progress BAR */
+.progress-bar{
+  background-color:#22A884;
+}
+
+
+/* control menusubitem input data */
+.treeview.active li{
+  margin-top:-10px;
+  margin-bottom:-35px;
+}
+
+.treeview.treeview.active{
+  margin-bottom:35px;  
+}
+
+
+
+/* change color of tabBox */
+.nav-tabs-custom .nav-tabs li.active:hover a, .nav-tabs-custom .nav-tabs li.active a {
+     background-color: transparent;
+     border-color: transparent;
+}
+.nav-tabs-custom .nav-tabs li.active {
+     border-top-color: #252C34;
+     border-top-width:thick;
+}
+
+/* change color of sliders */
+.irs-bar,
+.irs-bar-edge,
+.irs-single,
+.irs-from,
+.irs-to,
+.irs-grid-pol {
+  background: #22A884;
+  border-color: #22A884;
+}
+
+
+/* change color of information boxes */
+.small-box.bg-red {
+  background-color: #898D90 !important;
+}
+
+.small-box.bg-olive {
+  background-color: #22A884 !important;
+}
+
+/* distance of image to top and bottom */
+.workflow {
+  margin-top:-15px;
+  margin-bottom:15px;
+}
