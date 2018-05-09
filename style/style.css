@@ -1,8 +1,5 @@
 /* CUSTOM FONTS */
-@font-face {
-    font-family: "AMATI";
-    src: url('https://fonts.googleapis.com/css?family=Amatic+SC');
-}
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700');
 
 a:hover {
 	text-decoration:underline;
