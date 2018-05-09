@@ -1,7 +1,7 @@
 /* CUSTOM FONTS */
 @font-face {
-    font-family: "DK";
-    src: url("https://github.com/felixgrunberger/shiny-nano/blob/master/fonts/DK%20Lemon%20Yellow%20Sun.otf");
+    font-family: "AMATI";
+    src: url('https://fonts.googleapis.com/css?family=Amatic+SC');
 }
 
 a:hover {
@@ -46,7 +46,7 @@ a {
 
 /* NANO different font */
 body > div.wrapper > header > span > span.logo2 {
-  font-family: "DK";
+  font-family: "AMATI";
   font-weight: bold;
   font-size: 30px;
   height: 50px; 
@@ -59,7 +59,7 @@ body > div.wrapper > header > span > span.logo3 {
   line-height:50px; 
   font-size:35%;
   color:#22A884;
-  font-family: "DK";
+  font-family: "AMATI";
   font-weight: bold;
 }
 
